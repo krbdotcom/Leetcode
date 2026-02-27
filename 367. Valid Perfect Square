@@ -1,0 +1,17 @@
+bool isPerfectSquare(int num) {
+    long int i,a=0;
+    if (num==1)
+        return true;
+    for (i=1;i<=(num/2);i++)
+    {
+        if (i*i==num)
+        {
+            a=a+1;
+            return true;
+            break;
+        }
+    }
+    if (a==0)
+        return false;
+    return 0;
+}
