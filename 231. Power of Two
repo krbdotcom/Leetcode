@@ -1,0 +1,12 @@
+bool isPowerOfTwo(int n) {
+    if (n==1)
+        return true;
+    else if (n<=0)
+        return false;
+    int x=log2(n);
+    if ((int)pow(2,x)==n)
+        return true;
+    else
+        return false;
+    return 0;
+}
