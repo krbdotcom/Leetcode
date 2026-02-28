@@ -1,0 +1,15 @@
+#include <limits.h>
+int reverse(int x){
+    long int n=0;
+    int i;
+    while (x!=0)
+    {
+        i=x%10;
+        x=x/10;
+        if((n*10+i)>=INT_MIN && (n*10+i)<=INT_MAX)
+            n=n*10+i;
+        else 
+            return 0;
+    }
+    return n;
+}
