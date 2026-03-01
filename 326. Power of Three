@@ -1,0 +1,14 @@
+bool isPowerOfThree(int n) {
+    if (n<=0)
+        return false;
+    else if (n==1)
+        return true;
+    else
+    {
+        long int a=(log2(n)/log2(3));
+        if ((int)pow(3,a)==n)
+            return true;
+        else
+            return false;
+    }
+}
