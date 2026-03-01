@@ -1,0 +1,14 @@
+bool isMonotonic(int* nums, int numsSize) {
+    int i,j,s=0,a=0;
+    for (i=0;i<numsSize-1;i++)
+    {
+        if (nums[i]>=nums[i+1])
+            s=s+1;
+        if (nums[i]<=nums[i+1])
+            a=a+1;
+    }
+    if (s==numsSize-1||a==numsSize-1)
+        return true;
+    else
+        return false;
+}
