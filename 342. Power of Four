@@ -1,0 +1,10 @@
+bool isPowerOfFour(int n) {
+    if (n==1)
+        return true;
+    float a=(log(n)/log(4));
+    if (a-(int)a==0)
+        return true;
+    else
+        return false;
+    return 0;
+}
