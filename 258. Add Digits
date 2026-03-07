@@ -1,0 +1,19 @@
+int addDigits(int num) {
+    int i,n=num,s=0;
+    while (n>0)
+    {
+        i=n%10;
+        s=s+i;
+        n=n/10;
+        if (n==0&&s>9)
+        {
+            n=s;
+            s=0;
+        }
+        else if (n==0&&s<=9)
+            return s;
+        else
+            continue;
+    }
+    return 0;
+}
