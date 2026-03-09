@@ -1,0 +1,12 @@
+int findComplement(int num) {
+    int i,j,n=0,s=0;
+    while (num>0)
+    {
+        j=num%2;
+        num=num/2;
+        if (j==0)
+            s=s+1*(pow(2,n));
+        n=n+1;
+    }
+    return s;
+}
