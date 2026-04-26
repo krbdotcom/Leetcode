@@ -1,0 +1,70 @@
+int romanToInt(char* s) {
+    int a,b,n=0,i=0,z=0;
+    while (*s!='\0')
+    {
+        int x=i;
+        switch(*s)
+        {
+            case 'I':
+            {
+                n=n+1;
+                a=1;
+                i=0;
+                break;
+            }
+            case 'V':
+            {
+                n=n+5;
+                a=5;
+                i=1;
+                break;
+            }
+            case 'X':
+            {
+                n=n+10;
+                a=10;
+                i=2;
+                break;
+            }
+            case 'L':
+            {
+                n=n+50;
+                a=50;
+                i=3;
+                break;
+            }
+            case 'C':
+            {
+                n=n+100;
+                a=100;
+                i=4;
+                break;
+            }
+            case 'D':
+            {
+                n=n+500;
+                a=500;
+                i=5;
+                break;
+            }
+            case 'M':
+            {
+                n=n+1000;
+                a=1000;
+                i=6;
+                break;
+            }
+        }
+        s=s+1;
+        if (z==1)
+        {
+            if (i>x)
+            {
+                n=n-(2*b);
+            }
+        }
+        b=a;
+        z=1;
+    }
+    return n;
+}
