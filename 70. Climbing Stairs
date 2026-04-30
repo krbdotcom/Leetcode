@@ -1,0 +1,16 @@
+int climbStairs(int n) {
+    int s=1,i=1,x=1;
+    if (n==1)
+        return 1;
+    else
+    {
+        while (i<n)
+        {
+            int y=s;
+            s=s+x;
+            x=y;
+            i=i+1;
+        }
+    }
+    return s;
+}
