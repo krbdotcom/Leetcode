@@ -1,4 +1,4 @@
-int climbStairs(int n) {
+int climbStairs(int n){
     int s=1,i=1,x=1;
     if (n==1)
         return 1;
