@@ -1,0 +1,21 @@
+void rotate(int** matrix, int n, int* m) {
+    int i,j;
+    for (i=0;i<n;i++)
+    {
+        for (j=i;j<*m;j++)
+        {
+            int x=matrix[i][j];
+            matrix[i][j]=matrix[j][i];
+            matrix[j][i]=x;
+        }
+        for (j=0;j<*m;j++)
+        {
+            if (j<=(*m-(j+1)))
+            {
+                int y=matrix[i][j];
+                matrix[i][j]=matrix[i][*m-(j+1)];
+                matrix[i][*m-(j+1)]=y;
+            }
+        }
+    }
+}
