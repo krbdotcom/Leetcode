@@ -1,0 +1,11 @@
+int sumOfMultiples(int n) {
+    int i,s=0;
+    if (n<3)
+        return s;
+    for (i=3;i<=n;i++)
+    {
+        if (i%3==0||i%5==0||i%7==0)
+            s=s+i;
+    }
+    return s;
+}
