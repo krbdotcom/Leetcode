@@ -1,0 +1,14 @@
+int mirrorDistance(int n) {
+    int i,s=0,m=n;
+    while (m>0)
+    {
+        i=m%10;
+        s=s*10+i;
+        m=m/10;
+    }
+    int ans=n-s;
+    if (n<s)
+        return -(ans);
+    else
+        return ans;
+}
