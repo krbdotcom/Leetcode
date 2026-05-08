@@ -1,0 +1,16 @@
+int* findDegrees(int** matrix, int matrixSize, int* matrixColSize, int* returnSize) {
+    int i,j,s=0;
+    int* ans=(int*)malloc(matrixSize*sizeof(int));
+    for (i=0;i<matrixSize;i++)
+    {
+        for (j=0;j<*matrixColSize;j++)
+        {
+            if (matrix[i][j]==1)
+                s=s+1;
+        }
+        ans[i]=s;
+        s=0;
+    }
+    *returnSize=matrixSize;
+    return ans;
+}
