@@ -59,9 +59,7 @@ int romanToInt(char* s) {
         if (z==1)
         {
             if (i>x)
-            {
                 n=n-(2*b);
-            }
         }
         b=a;
         z=1;
