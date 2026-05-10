@@ -1,0 +1,13 @@
+int hammingDistance(int x, int y) {
+    int i,j,s=0;
+    while ((x>0)||(y>0))
+    {
+        i=x%2;
+        j=y%2;
+        if (i!=j)
+            s=s+1;
+        x=x/2;
+        y=y/2;
+    }
+    return s;
+}
