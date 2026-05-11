@@ -1,0 +1,26 @@
+int* findWordsContaining(char** words, int wordsSize, char x, int* returnSize) {
+    int i,k,j=0,a=0,z=0;
+    int* ans=(int*)malloc(wordsSize*sizeof(int));
+    for (i=0;i<wordsSize;i++)
+    {
+        while (((words[i][j]>=65)&&(words[i][j]<=90))||((words[i][j]>=97)&&(words[i][j]<=122)))
+        {
+            if (x==words[i][j])
+            {
+                z=1;
+                k=i;
+                break;
+            }
+            j=j+1;
+        }
+        if (z==1)
+        {
+            ans[a]=k;
+            a=a+1;
+            z=0;
+        }
+        j=0;
+    }
+    *returnSize=a;
+    return ans;
+}
