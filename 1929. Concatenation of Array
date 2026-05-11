@@ -1,0 +1,13 @@
+int* getConcatenation(int* nums, int n, int* returnSize) {
+    int i;
+    int* ans=(int*)malloc((2*n)*sizeof(int));
+    for (i=0;i<(n*2);i++)
+    {
+        if (i<n)
+            ans[i]=nums[i];
+        else if (i>=n)
+            ans[i]=nums[i-n];
+    }
+    *returnSize=2*n;
+    return ans;
+}
