@@ -1,0 +1,19 @@
+bool isSameAfterReversals(int num) {
+    int i,x=0,rev=0,n=num;
+    while (n>0)
+    {
+        i=n%10;
+        rev=rev*10+i;
+        n=n/10;
+    }
+    while (rev>0)
+    {
+        i=rev%10;
+        x=x*10+i;
+        rev=rev/10;
+    }
+    if (x==num)
+        return true;
+    else
+        return false;
+}
