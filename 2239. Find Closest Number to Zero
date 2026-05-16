@@ -1,0 +1,33 @@
+int findClosestNumber(int* nums, int numsSize) {
+    int i,j,s,ans=*nums;
+    if (*nums<0)
+        s=-(*nums);
+    else if (*nums>0)
+        s=*nums;
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]>0)
+            j=nums[i];
+        else if (nums[i]<0)
+            j=-(nums[i]);
+        else if (nums[i]==0)
+            return 0;
+        if (s>=j)
+        {
+            if (s>j)
+            {
+                s=j;
+                ans=nums[i];
+            }
+            else if (s==j)
+            {
+                if (nums[i]>0)
+                {
+                    s=j;
+                    ans=nums[i];
+                }
+            }
+        }
+    }
+    return ans;
+}
