@@ -1,0 +1,19 @@
+int tribonacci(int n) {
+    int s,i=2,a=1,b=1,c=0;
+    if (n==0)
+        return 0;
+    else if ((n==1)||(n==2))
+        return 1;
+    else
+    {
+        while (i!=n)
+        {
+            s=a+b+c;
+            c=b;
+            b=a;
+            a=s;
+            i=i+1;
+        }
+    }
+    return s;
+}
