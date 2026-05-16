@@ -1,0 +1,14 @@
+bool validDigit(int n, int x) {
+    int i,a=0;
+    while (n>9)
+    {
+        i=n%10;
+        if (i==x)
+            a=1;
+        n=n/10;
+    }
+    if ((a==1)&&(x!=n))
+        return true;
+    else
+        return false;
+}
