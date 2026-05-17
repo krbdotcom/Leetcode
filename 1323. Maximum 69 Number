@@ -1,0 +1,16 @@
+int maximum69Number (int num) {
+    int i,x,y,c=1,n=num;
+    while ((n/((int)pow(10,c-1)))!=0)
+    {
+        i=(n/((int)pow(10,c-1)))%10;
+        x=n/((int)pow(10,c));
+        y=n%((int)pow(10,c-1));
+        if (i==6)
+            x=x*10+9;
+        x=x*((int)pow(10,c-1))+y;
+        if (x>num)
+            num=x;
+        c=c+1;
+    }
+    return num;
+}
