@@ -1,0 +1,18 @@
+bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize) {
+    int i,h=0;
+    bool* result=(bool*)malloc(candiesSize*sizeof(bool));
+    for (i=0;i<candiesSize;i++)
+    {
+        if (h<candies[i])
+            h=candies[i];
+    }
+    for (i=0;i<candiesSize;i++)
+    {
+        if ((candies[i]+extraCandies)>=h)
+            result[i]=true;
+        else
+            result[i]=false;
+    }
+    *returnSize=candiesSize;
+    return result;
+}
