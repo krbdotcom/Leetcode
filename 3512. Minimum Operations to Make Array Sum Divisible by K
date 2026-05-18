@@ -1,0 +1,11 @@
+int minOperations(int* nums, int numsSize, int k) {
+    int i,s=0,o=0;
+    for (i=0;i<numsSize;i++)
+        s=s+nums[i];
+    while (s%k!=0)
+    {
+        s=s-1;
+        o=o+1;
+    }
+    return o;
+}
