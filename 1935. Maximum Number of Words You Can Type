@@ -1,0 +1,32 @@
+int canBeTypedWords(char* text, char* brokenLetters) {
+    int i=0,s=0,l=0,t=0,w=0;
+    while (*text!='\0')
+    {
+        if (*text!=' ')
+        {
+            while (brokenLetters[i]!='\0')
+            {
+                if (*text==brokenLetters[i])
+                {
+                    s=1;
+                    break;
+                }
+                i=i+1;
+            }
+            if (s==0)
+                l=l+1;
+            s=0;
+            t=t+1;
+        }
+        if ((*text==' ')||(*(text+1)=='\0'))
+        {
+            if (t==l)
+                w=w+1;
+            t=0;
+            l=0;
+        }
+        i=0;
+        text=text+1;
+    }
+    return w;
+}
