@@ -1,0 +1,28 @@
+int* constructRectangle(int area, int* returnSize) {
+    int i,j,a=0;
+    int* ans=(int*)malloc(2*sizeof(int));
+    for (i=1;i<=area;i++)
+    {
+        if ((area%i==0)&&(((int)round(area/i))<=i))
+        {
+            if (area==((int)pow(i,2)))
+            {
+                ans[0]=i;
+                ans[1]=i;
+                break;
+            }
+            else
+            {
+                if (((int)round(area/i))>a)
+                {
+                    j=i;
+                    a=((int)round(area/i));
+                }
+            }
+        }
+        ans[0]=j;
+        ans[1]=a;
+    }
+    *returnSize=2;
+    return ans;
+}
