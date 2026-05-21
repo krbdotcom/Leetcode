@@ -1,0 +1,21 @@
+bool canConstruct(char* ransomNote, char* magazine) {
+    int i,j,s=0;
+    int l1=strlen(ransomNote);
+    int l2=strlen(magazine);
+    for (i=0;i<l1;i++)
+    {
+        for (j=0;j<l2;j++)
+        {
+            if (ransomNote[i]==magazine[j])
+            {
+                s=s+1;
+                magazine[j]=' ';
+                break;
+            }
+        }
+    }
+    if (s==l1)
+        return true;
+    else
+        return false;
+}
