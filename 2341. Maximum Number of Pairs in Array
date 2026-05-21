@@ -1,0 +1,24 @@
+int* numberOfPairs(int* nums, int numsSize, int* returnSize) {
+    int i,j,k=0,p=0;
+    int* ans=(int*)malloc(2*sizeof(int));
+    for (i=0;i<numsSize;i++)
+    {
+        int a=0;
+        for (j=i+1;j<numsSize;j++)
+        {
+            if ((nums[i]==nums[j])&&(nums[i]!=-1))
+            {
+                p=p+1;
+                nums[j]=-1;
+                a=1;
+                break;
+            }
+        }
+        if ((a==0)&&(nums[i]!=-1))
+            k=k+1;
+    } 
+    ans[0]=p;
+    ans[1]=k;
+    *returnSize=2;
+    return ans;
+}
