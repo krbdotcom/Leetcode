@@ -1,0 +1,21 @@
+char findTheDifference(char* s, char* t) {
+    int i,j,k;
+    int l1=strlen(t);
+    int l2=strlen(s);
+    for (i=0;i<l1;i++)
+    {
+        int a=0;
+        for (j=0;j<l2;j++)
+        {
+            if (s[j]==t[i])
+            {
+                s[j]='\0';
+                a=1;
+                break;
+            }
+        }
+        if (a==0)
+            k=i;
+    }
+    return t[k];
+}
