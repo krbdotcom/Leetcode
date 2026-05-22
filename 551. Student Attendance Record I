@@ -1,0 +1,32 @@
+bool checkRecord(char* s) {
+    int a=0,i=0,l=i;
+    while (*s!='\0')
+    {
+        switch (*s)
+        {
+            case 'A':
+            {
+                a=a+1;
+                i=0;
+                break;
+            }
+            case 'L':
+            {
+                i=i+1;
+                if (l<i)
+                    l=i;
+                break;
+            }
+            default:
+            {
+                i=0;
+                break;
+            }
+        }
+        s=s+1;
+    }
+    if ((a<2)&&(l<3))
+        return true;
+    else
+        return false;
+}
