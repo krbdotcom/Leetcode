@@ -1,0 +1,23 @@
+int* selfDividingNumbers(int left, int right, int* returnSize) {
+    int i,j,x,s=0,c=0,n=0;
+    int* ans=(int*)malloc(right*sizeof(int));
+    for (i=left;i<=right;i++)
+    {
+        s=0,c=0,x=i;
+        while (x>0)
+        {
+            j=x%10;
+            if ((j!=0)&&(i%j==0))
+                s=s+1;
+            x=x/10;
+            c=c+1;
+        }
+        if (s==c)
+        {
+            ans[n]=i;
+            n=n+1;
+        }
+    }
+    *returnSize=n;
+    return ans;
+}
