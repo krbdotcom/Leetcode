@@ -1,0 +1,20 @@
+int dominantIndex(int* nums, int numsSize) {
+    int i,j,h=0,s=0;
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]>h)
+        {
+            h=nums[i];
+            j=i;
+        }
+    }
+    for (i=0;i<numsSize;i++)
+    {
+        if ((nums[i]>s)&&(i!=j))
+            s=nums[i];
+    }
+    if ((h/2)>=s)
+        return j;
+    else
+        return -1;
+}
