@@ -1,5 +1,5 @@
 int* selfDividingNumbers(int left, int right, int* returnSize) {
-    int i,j,x,s=0,c=0,n=0;
+    int i,j,x,s,c,n=0;
     int* ans=(int*)malloc(right*sizeof(int));
     for (i=left;i<=right;i++)
     {
