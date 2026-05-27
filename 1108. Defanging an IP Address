@@ -1,0 +1,16 @@
+char * defangIPaddr(char * address){
+    int i,s=0,l=strlen(address);
+    char* defip=(char*)calloc((2*l),sizeof(char));
+    for (i=0;i<l;i++)
+    {
+        if (address[i]=='.')
+        {
+            s=s+2;
+            defip=strcat(defip,"[.]");
+        }
+        else
+            defip[i+s]=address[i];
+    }
+    defip[i+s]='\0';
+    return defip;
+}
