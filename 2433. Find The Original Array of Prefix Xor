@@ -1,0 +1,12 @@
+int* findArray(int* pref, int prefSize, int* returnSize) {
+    int i,j,x=0;
+    int* arr=(int*)malloc(prefSize*sizeof(int));
+    for (i=0;i<prefSize;i++)
+    {
+        j=x^pref[i];
+        arr[i]=j;
+        x=x^j;
+    }
+    *returnSize=prefSize;
+    return arr;
+}
