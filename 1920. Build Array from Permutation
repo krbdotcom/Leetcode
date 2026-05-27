@@ -1,8 +1,8 @@
-int* buildArray(int* nums, int numsSize, int* returnSize) {
+int* buildArray(int* nums, int nSize, int* returnSize) {
     int i;
-    int* ans=(int*)malloc(numsSize*sizeof(int));
-    for (i=0;i<numsSize;i++)
+    int* ans=(int*)malloc(nSize*sizeof(int));
+    for (i=0;i<nSize;i++)
         ans[i]=nums[nums[i]];
-    *returnSize=numsSize;
+    *returnSize=nSize;
     return ans;
 }
