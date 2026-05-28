@@ -1,0 +1,15 @@
+int countDigitOccurrences(int* nums, int numsSize, int digit) {
+    int i,j,x,s=0;
+    for (i=0;i<numsSize;i++)
+    {
+        x=nums[i];
+        while (x>0)
+        {
+            j=x%10;
+            if (j==digit)
+                s=s+1;
+            x=x/10;
+        }
+    }  
+    return s;
+}
