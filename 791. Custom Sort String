@@ -1,0 +1,22 @@
+char* customSortString(char* order, char* s) {
+    int i=0,j=0;
+    while (*order!='\0')
+    {
+        while ((s[i]!=*order)&&(s[i]!='\0'))
+            i=i+1;
+        if (s[i]!='\0')
+        {
+            char a=s[i];
+            s[i]=s[j];
+            s[j]=a;
+            i=i+1;
+            j=j+1;
+        }
+        else
+        {
+            i=0;
+            order=order+1;
+        }
+    }
+    return s;
+}
