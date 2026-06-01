@@ -1,0 +1,6 @@
+int xorOperation(int n, int start) {
+    int i,x=0;
+    for (i=0;i<n;i++)
+        x=x^(start+(2*i));
+    return x;
+}
