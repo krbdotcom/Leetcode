@@ -1,0 +1,11 @@
+char* reversePrefix(char* s, int k) {
+    int i;
+    while (i<(k-1))
+    {
+        char a=s[i];
+        s[i]=s[k-1];
+        s[k-1]=a;
+        i=i+1,k=k-1;
+    }
+    return s;
+}
