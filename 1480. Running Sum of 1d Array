@@ -1,0 +1,11 @@
+int* runningSum(int* nums, int numsSize, int* returnSize) {
+    int i,s=0;
+    int* runsum=(int*)malloc(numsSize*sizeof(int));
+    for (i=0;i<numsSize;i++)
+    {
+        s=s+nums[i];
+        runsum[i]=s;
+    }
+    *returnSize=numsSize;
+    return runsum;
+}
