@@ -1,0 +1,22 @@
+int differenceOfSum(int* nums, int numsSize) {
+    int i,x,s=0,ds=0;
+    for (i=0;i<numsSize;i++)
+    {
+        s=s+nums[i];
+        if (nums[i]>9)
+        {
+            x=nums[i];
+            while (x>0)
+            {
+                ds=ds+(x%10);
+                x=x/10;
+            }
+        }
+        else
+            ds=ds+nums[i];
+    }
+    if (ds>s)
+        return (ds-s);
+    else
+        return (s-ds);
+}
