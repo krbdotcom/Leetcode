@@ -1,0 +1,17 @@
+int* leftRightDifference(int* nums, int numsSize, int* returnSize) {
+    int i,x,r=0,l=0;
+    int* ans=(int*)malloc(numsSize*sizeof(int));
+    for (i=0;i<numsSize;i++)
+        r=r+nums[i];
+    for (i=0;i<numsSize;i++)
+    {
+        if ((r-(l+nums[i]))>l)
+            x=(r-(l+nums[i]))-l;
+        else
+            x=l-(r-(l+nums[i]));
+        ans[i]=x;
+        l=l+nums[i]; 
+    }
+    *returnSize=numsSize;
+    return ans;
+}
