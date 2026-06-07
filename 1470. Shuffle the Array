@@ -1,0 +1,12 @@
+int* shuffle(int* nums, int numsSize, int n, int* returnSize){
+    int i,j=0;
+    int* ans=(int*)malloc(numsSize*sizeof(int));
+    for (i=0;i<numsSize;i=i+2)
+    {
+        ans[i]=nums[j];
+        ans[i+1]=nums[j+n];
+        j=j+1;
+    }
+    *returnSize=numsSize;
+    return ans;
+}
