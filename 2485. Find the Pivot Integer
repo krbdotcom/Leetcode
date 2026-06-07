@@ -1,0 +1,18 @@
+int pivotInteger(int n) {
+    int i,j=0,x=0,y=0;
+    for (i=1;i<=n;i++)
+        x=x+i;
+    for (i=1;i<=n;i++)
+    {
+        y=y+i;
+        if (y==((x-y)+i))
+            j=i;
+    }
+    switch (j)
+    {
+        case 0:
+            return -1;
+        default:
+            return j;
+    }
+}
