@@ -1,0 +1,14 @@
+char* truncateSentence(char* s, int k) {
+    int i,j=0;
+    while (s[i]!='\0')
+    {
+        if (s[i+1]==' ')
+        {
+            j=j+1;
+            if (j==k)
+                s[i+1]='\0';
+        }
+        i=i+1;
+    }
+    return s;
+}
