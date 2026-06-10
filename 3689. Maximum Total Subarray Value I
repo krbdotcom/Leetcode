@@ -1,0 +1,12 @@
+long long maxTotalValue(int* nums, int numsSize, int k) {
+    int i;
+    long long int s=*nums,h=0;
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]<s)
+            s=nums[i];
+        if (nums[i]>h)
+            h=nums[i];
+    }
+    return ((h-s)*k);
+}
