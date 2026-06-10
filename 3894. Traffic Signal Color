@@ -1,0 +1,16 @@
+char* trafficSignal(int timer) {
+    if ((timer>30)&&(timer<=90))
+        return "Red";
+    else
+    {
+        switch (timer)
+        {
+            case 0:
+                return "Green";
+            case 30:
+                return "Orange";
+            default:
+                return "Invalid";
+        }
+    }
+}
