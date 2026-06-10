@@ -1,0 +1,17 @@
+int maxProduct(int* nums, int numsSize) {
+    int i,j,s1=0,s2=0;
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]>s1)
+        {
+            j=i;
+            s1=nums[i];
+        }
+    }
+    for (i=0;i<numsSize;i++)
+    {
+        if ((nums[i]>s2)&&(i!=j))
+            s2=nums[i];
+    }
+    return ((s1-1)*(s2-1));
+}
