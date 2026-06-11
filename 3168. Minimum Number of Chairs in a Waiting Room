@@ -1,0 +1,23 @@
+int minimumChairs(char* s) {
+    int chair=0,c=0;
+    while (*s!='\0')
+    {
+        switch (*s)
+        {
+            case 'E':
+            {
+                c=c+1;
+                break;
+            }
+            case 'L':
+            {
+                c=c-1;
+                break;
+            }
+        }
+        if (c>chair)
+            chair=c;
+        s=s+1;
+    }
+    return chair;
+}
