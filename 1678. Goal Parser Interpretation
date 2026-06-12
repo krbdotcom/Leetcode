@@ -1,0 +1,43 @@
+char* interpret(char* cmd){
+    int i=0,c=0,p=0;
+    while (cmd[i]!='\0')
+    {
+        switch (cmd[i])
+        {
+            case '(':
+            {
+                switch (cmd[i+1])
+                {
+                    case ')':
+                    {
+                        cmd[i-p]='o';
+                        p=p+1;
+                        i=i+1;
+                        c=c+1;
+                        break;
+                    }
+                    case 'a':
+                    {
+                        cmd[i-p]='a';
+                        i=i+1;
+                        cmd[i-p]='l';
+                        p=p+2;
+                        i=i+2;
+                        c=c+2;
+                        break;
+                    }
+                }
+                break;
+            }
+            default:
+            {
+                c=c+1;
+                cmd[i-p]='G';
+                break;
+            }
+        }
+        i=i+1;
+    }
+    cmd[c]='\0';
+    return cmd;
+}
