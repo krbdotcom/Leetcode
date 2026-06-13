@@ -1,0 +1,16 @@
+char* mapWordWeights(char** words, int wordsSize, int* weights, int weightsSize) {
+    int i,j,k;
+    char* str=(char*)malloc((wordsSize+1)*sizeof(char));
+    for (i=0;i<wordsSize;i++)
+    {
+        j=0,k=0;
+        while (words[i][j]!='\0')
+        {
+            k=k+weights[((int)words[i][j])-97];
+            j=j+1;
+        }
+        str[i]=(char)(122-(k%26));
+    }
+    str[i]='\0';
+    return str;
+}
