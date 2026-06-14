@@ -1,0 +1,27 @@
+int furthestDistanceFromOrigin(char* moves) {
+    int l=0,r=0,s=0;
+    while (*moves!='\0')
+    {
+        switch (*moves)
+        {
+            case 'L':
+            {
+                l=l+1;
+                break;
+            }
+            case 'R':
+            {
+                r=r+1;
+                break;
+            }
+            default:
+            {
+                s=s+1;
+                break;
+            }
+        }
+        moves=moves+1;
+    }
+    int dist=(l>=r)?((l-r)+s):((r-l)+s);
+    return dist;
+}
