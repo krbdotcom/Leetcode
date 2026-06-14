@@ -1,0 +1,22 @@
+int* occurrencesOfElement(int* nums, int numsSize, int* queries, int queriesSize, int x, int* returnSize) {
+    int i,j=0;
+    int* index=(int*)malloc(numsSize*sizeof(int));
+    int* ans=(int*)malloc(queriesSize*sizeof(int));
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]==x)
+        {
+            index[j]=i;
+            j=j+1;
+        }
+    }
+    for (i=0;i<queriesSize;i++)
+    {
+        if (queries[i]>j)
+            ans[i]=-1;
+        else
+            ans[i]=index[queries[i]-1];
+    }
+    *returnSize=queriesSize;
+    return ans;
+}
