@@ -1,0 +1,14 @@
+bool checkGoodInteger(int n) {
+    int i,d=0,s=0;
+    while (n>0)
+    {
+        i=n%10;
+        d=d+i;
+        s=s+(i*i);
+        n=n/10;
+    }
+    if ((s-d)>=50)
+        return true;
+    else
+        return false;
+}
