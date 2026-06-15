@@ -1,0 +1,27 @@
+bool isArraySpecial(int* nums, int numsSize) {
+    int i,a;
+    ((*nums)%2==0)?(a=0):(a=1);
+    for (i=1;i<numsSize;i++)
+    {
+        switch (nums[i]%2)
+        {
+            case 0:
+            {
+                if (a==1)
+                    a=0;
+                else
+                    return false;
+                break;
+            }
+            case 1:
+            {
+                if (a==0)
+                    a=1;
+                else
+                    return false;
+                break;
+            }
+        }
+    }
+    return true;
+}
