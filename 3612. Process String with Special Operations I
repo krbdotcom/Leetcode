@@ -1,0 +1,50 @@
+char* processStr(char* s) {
+    int i,j,k,c=0,l=strlen(s);
+    char* result=(char*)malloc(((int)pow(2,l))*sizeof(char));
+    for (i=0;i<l;i++)
+    {
+        switch (s[i])
+        {
+            case '*':
+            {
+                if (c!=0)
+                {
+                    c=c-1;
+                    result[c]='\0';
+                }
+                break;
+            }
+            case '#':
+            {
+                k=c;
+                for (j=0;j<k;j++)
+                {
+                    result[c]=result[j];
+                    c=c+1;
+                }
+                break;
+            }
+            case '%':
+            {
+                j=0,k=c-1;
+                while (j<k)
+                {
+                    char a=result[j];
+                    result[j]=result[k];
+                    result[k]=a;
+                    j=j+1;
+                    k=k-1;
+                }
+                break;
+            }
+            default:
+            {
+                result[c]=s[i];
+                c=c+1;
+                break;
+            }
+        }
+    }
+    result[c]='\0';
+    return result;
+}
