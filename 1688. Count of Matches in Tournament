@@ -1,0 +1,26 @@
+int totmatches(int team, int match)
+{
+    if (team!=1)
+    {
+        switch (team%2)
+        {
+            case 0:
+            {
+                match=match+(team/2);
+                return totmatches((team/2),match);
+            }
+            default:
+            {
+                match=match+((team-1)/2);
+                return totmatches((((team-1)/2)+1),match);
+            }
+        }
+    }
+    else
+        return match; 
+}
+int numberOfMatches(int n) {
+    int ans,match=0;
+    ans=totmatches(n,match);
+    return ans;
+}
