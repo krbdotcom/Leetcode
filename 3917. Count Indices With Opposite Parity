@@ -1,0 +1,31 @@
+int* countOppositeParity(int* nums, int numsSize, int* returnSize) {
+    int i,e=0,o=0;
+    int* ans=(int*)malloc(numsSize*sizeof(int));
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]%2==0)
+            e=e+1;
+        else    
+            o=o+1;
+    }
+    for (i=0;i<numsSize;i++)
+    {
+        switch (nums[i]%2)
+        {
+            case 0:
+            {
+                ans[i]=o;
+                e=e-1;
+                break;
+            }
+            default:
+            {
+                ans[i]=e;
+                o=o-1;
+                break;
+            }
+        }
+    }
+    *returnSize=numsSize;
+    return ans;
+}
