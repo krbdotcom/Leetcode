@@ -1,0 +1,28 @@
+int* stableMountains(int* height, int heightSize, int threshold, int* returnSize) {
+    int i,j=1,a=0;
+    int* arr=(int*)malloc(j*sizeof(int));
+    for (i=0;i<heightSize;i++)
+    {
+        if (a==1)
+        {
+            arr[j-1]=i;
+            j=j+1;
+            arr=realloc(arr,j*sizeof(int));
+        }
+        switch (height[i]>threshold)
+        {
+            case true:
+            {
+                a=1;
+                break;
+            }
+            default:
+            {
+                a=0;
+                break;
+            }
+        }
+    }
+    *returnSize=j-1;
+    return arr;
+}
