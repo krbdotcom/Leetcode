@@ -1,0 +1,51 @@
+int maxNumberOfBalloons(char* text) {
+    int i,ans;
+    int* balloon=(int*)calloc(5,sizeof(int));
+    while (*text!='\0')
+    {
+        switch (*text)
+        {
+            case 'b':
+            {
+                balloon[0]=balloon[0]+1;
+                break;
+            }
+            case 'a':
+            {
+                balloon[1]=balloon[1]+1;
+                break;
+            }
+            case 'l':
+            {
+                balloon[2]=balloon[2]+1;
+                break;
+            }
+            case 'o':
+            {
+                balloon[3]=balloon[3]+1;
+                break;
+            }
+            case 'n':
+            {
+                balloon[4]=balloon[4]+1;
+                break;
+            }
+        }
+        text=text+1;
+    }
+    ans=balloon[0];
+    for (i=0;i<5;i++)
+    {
+        if ((i!=2)&&(i!=3))
+        {
+            if (ans>balloon[i])
+                ans=balloon[i];
+        }
+        else
+        {
+            if (ans>(balloon[i]/2))
+                ans=(balloon[i]/2);
+        }
+    }
+    return ans;
+}
