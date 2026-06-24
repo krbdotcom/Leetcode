@@ -1,0 +1,17 @@
+bool halvesAreAlike(char* s) {
+    int i,h1=0,h2=0,l=strlen(s);
+    for (i=0;i<l;i++)
+    {
+        if ((s[i]=='a')||(s[i]=='e')||(s[i]=='i')||(s[i]=='o')||(s[i]=='u')||(s[i]=='A')||(s[i]=='E')||(s[i]=='I')||(s[i]=='O')||(s[i]=='U'))
+        {
+            if (i<(l/2))
+                h1=h1+1;
+            else
+                h2=h2+1;
+        }
+    }
+    if (h1==h2)
+        return true;
+    else
+        return false;
+}
