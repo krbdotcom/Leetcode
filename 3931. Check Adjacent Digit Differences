@@ -1,0 +1,12 @@
+bool isAdjacentDiffAtMostTwo(char* s) {
+    int i=0,x,n;
+    while (s[i]!='\0')
+    {
+        (i==0)?(x=(s[i]-'0')):(x=((s[i-1]-'0')-(s[i]-'0')));
+        (x<0)?(n=-x):(n=x);
+        if ((i!=0)&&(n>2))
+            return false;
+        i=i+1;
+    }
+    return true;
+}
