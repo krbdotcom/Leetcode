@@ -1,0 +1,16 @@
+int findNonMinOrMax(int* nums, int numsSize) {
+    int i,h=0,s=*nums;
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]<s)
+            s=nums[i];
+        if (nums[i]>h)
+            h=nums[i];
+    }
+    for (i=0;i<numsSize;i++)
+    {
+        if ((nums[i]!=s)&&(nums[i]!=h))
+            return nums[i];
+    }
+    return -1;
+}
