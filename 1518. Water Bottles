@@ -1,0 +1,9 @@
+int numWaterBottles(int numBottles, int numExchange) {
+    int s=numBottles;
+    while (numBottles/numExchange!=0)
+    {
+        s=s+(numBottles/numExchange);
+        numBottles=(numBottles/numExchange)+(numBottles%numExchange);
+    }
+    return s;
+}
