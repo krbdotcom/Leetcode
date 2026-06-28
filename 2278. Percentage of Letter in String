@@ -1,0 +1,10 @@
+int percentageLetter(char* s, char letter) {
+    double i=0,l=strlen(s);
+    while (*s!='\0')
+    {
+        if (*s==letter)
+            i=i+1.00;
+        s=s+1;
+    }
+    return ((i/l)*100);
+}
