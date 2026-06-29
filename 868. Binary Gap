@@ -1,0 +1,14 @@
+int binaryGap(int n) {
+    int c=0,s=-1,ans=0;
+    while (n>0)
+    {
+        (((n%2)==1)?((s=1)&&(c=c+1)):((s==-1)?(s=-1):(s=s+1)));
+        if (s>ans)
+            ans=s;
+        n=n/2;
+    }
+    if (c>1)
+        return ans;
+    else
+        return 0;
+}
