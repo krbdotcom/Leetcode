@@ -1,0 +1,19 @@
+int* sortArrayByParity(int* nums, int numsSize, int* returnSize) {
+    int i,j=0,k=0;
+    int* ans=(int*)malloc(numsSize*sizeof(int));
+    for (i=0;i<numsSize;i++)
+    {
+        if (nums[i]%2==0)
+        {
+            ans[j]=nums[i];
+            j=j+1;
+        }
+        else
+        {
+            ans[numsSize-(k+1)]=nums[i];
+            k=k+1;
+        }
+    }
+    *returnSize=numsSize;
+    return ans;
+}
