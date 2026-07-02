@@ -1,0 +1,13 @@
+bool checkDivisibility(int n) {
+    int x=n,s=0,p=1;
+    while (x>0)
+    {
+        s=s+(x%10);
+        p=p*(x%10);
+        x=x/10;
+    }
+    if ((n%(s+p))==0)
+        return true;
+    else
+        return false;
+}
