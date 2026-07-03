@@ -1,0 +1,18 @@
+double calculateTax(int** brackets, int bracketsSize, int* bracketsColSize, int income) {
+    int i;
+    double s=0.00,tax=0.00;
+    for (i=0;i<bracketsSize;i++)
+    {
+        if ((brackets[i][0]>income)&&(s<=income))
+        {
+            tax=tax+((income-s)*brackets[i][1])/100;
+            break;
+        }
+        else
+        {
+            tax=tax+((brackets[i][0]-s)*brackets[i][1])/100;
+            s=brackets[i][0];
+        }
+    }
+    return tax;
+}
