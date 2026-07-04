@@ -1,0 +1,19 @@
+int buyChoco(int* prices, int pricesSize, int money) {
+    int i,s1=0,s2=0;
+    for (i=0;i<pricesSize;i++)
+    {
+        if (prices[i]<prices[s1])
+            s1=i;
+    }
+    if (s1==s2)
+        s2=1;
+    for (i=0;i<pricesSize;i++)
+    {
+        if ((prices[i]<prices[s2])&&(i!=s1))
+            s2=i;
+    }
+    if ((money-(prices[s1]+prices[s2]))>=0)
+        return (money-(prices[s1]+prices[s2]));
+    else
+        return money;
+}
