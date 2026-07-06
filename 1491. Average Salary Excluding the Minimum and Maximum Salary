@@ -1,0 +1,17 @@
+double average(int* salary, int salarySize) {
+    int i;
+    double sum=0,h=0,s=*salary;
+    for (i=0;i<salarySize;i++)
+    {
+        if (h<salary[i])
+            h=salary[i];
+        sum=sum+salary[i];
+    }
+    for (i=0;i<salarySize;i++)
+    {
+        if (s>salary[i])
+            s=salary[i];
+    }
+    sum=sum-(h+s);
+    return (sum/(salarySize-2));
+}
