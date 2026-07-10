@@ -1,0 +1,15 @@
+int* findPeaks(int* mountain, int mountainSize, int* returnSize) {
+    int i,j=0;
+    int* arr=(int*)malloc(1*sizeof(int));
+    for (i=1;i<(mountainSize-1);i++)
+    {
+        if ((mountain[i]>mountain[i+1])&&(mountain[i]>mountain[i-1]))
+        {
+            arr[j]=i;
+            j=j+1;
+            arr=realloc(arr,(j+1)*sizeof(int));
+        }
+    }
+    *returnSize=j;
+    return arr;
+}
