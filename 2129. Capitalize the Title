@@ -1,0 +1,22 @@
+char* capitalizeTitle(char* title) {
+    int i,j=0,l=strlen(title),s=3;
+    for (i=0;i<(l+1);i++)
+    {
+        if ((i==0)||(title[i-1]==' ')||(i==l))
+        {
+            if ((s<=2)&&(i!=0))
+                title[j]=title[j]+32;
+            if ((title[i]>=97)&&(title[i]<=122))
+                title[i]=title[i]-32;
+            s=1;
+            j=i;
+        }
+        else if (title[i]!=' ')
+        {
+            if ((title[i]>=65)&&(title[i]<=90))
+                title[i]=title[i]+32;
+            s=s+1;
+        }
+    }
+    return title;
+}
