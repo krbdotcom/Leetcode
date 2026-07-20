@@ -1,0 +1,16 @@
+char* stringHash(char* s, int k) {
+    int i,j=0,a=0,c=0,l=strlen(s);
+    char* result=(char*)malloc(((l/k)+1)*sizeof(char));
+    for (i=0;i<l;i++)
+    {
+        c=c+(((int)s[i])-97);
+        a=a+1;
+        if (a==k)
+        {
+            result[j]=((char)(97+(c%26)));
+            j=j+1,c=0,a=0;
+        }
+    }
+    result[j]='\0';
+    return result;
+}
