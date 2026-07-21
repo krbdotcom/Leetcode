@@ -1,0 +1,20 @@
+int secondsBetweenTimes(char* startTime, char* endTime) {
+    int i=2,s=0,e=0,t=0;
+    while(*endTime!='\0')
+    {
+        if (*endTime!=':')
+        {
+            s=s*10+(*startTime-'0');
+            e=e*10+(*endTime-'0');
+        }
+        else
+        {
+            t=t+((e-s)*((int)pow(60,i)));
+            s=0,e=0,i=i-1;
+        }
+        endTime=endTime+1;
+        startTime=startTime+1;
+    }
+    t=t+(e-s);
+    return t;
+}
