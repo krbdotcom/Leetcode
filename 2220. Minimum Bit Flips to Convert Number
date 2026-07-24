@@ -1,0 +1,10 @@
+int minBitFlips(int start, int goal) {
+    int i=0;
+    while ((start>0)||(goal>0))
+    {
+        if ((goal%2)!=(start%2))
+            i=i+1;
+        goal=goal/2,start=start/2;
+    }
+    return i;
+}
