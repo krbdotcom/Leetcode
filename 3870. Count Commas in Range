@@ -1,0 +1,6 @@
+int countCommas(int n) {
+    if ((n/1000)>=1)
+        return ((((n/1000)*1000)-999)+(n%1000));
+    else
+        return 0;
+}
