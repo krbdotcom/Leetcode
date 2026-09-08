@@ -1,0 +1,30 @@
+void push(char* stack, int* top, char val)
+{
+    *top=*top+1;
+    stack[*top]=val;
+}
+char pop(char* stack, int* top)
+{
+    char val=stack[*top];
+    *top=*top-1;
+    return val;
+}
+bool isValid(char* s) {
+    int l=strlen(s),top=-1;;
+    char stack[l];
+    while (*s!='\0')
+    {
+        if ((*s=='(')||(*s=='{')||(*s=='['))
+            push(stack,&top,*s);
+        else
+        {
+            if ((top==-1)||((*s==')')&&(pop(stack,&top)!='('))||((*s=='}')&&(pop(stack,&top)!='{'))||((*s==']')&&(pop(stack,&top)!='[')))
+                return false;
+        }
+        s=s+1;
+    }
+    if (top!=-1)
+        return false;
+    else
+        return true;
+}
