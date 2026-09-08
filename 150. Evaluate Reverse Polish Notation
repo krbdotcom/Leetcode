@@ -1,0 +1,59 @@
+void push(int n,int* top,int* stack)
+{
+    *top=*top+1;
+    stack[*top]=n;
+}
+int pop(int* top,int* stack)
+{
+    int val=stack[*top];
+    *top=*top-1;
+    return val;
+}
+int evalRPN(char** tokens, int tokensSize) {
+    int i,a,b,top=-1,stack[tokensSize];
+    for (i=0;i<tokensSize;i++) 
+    {
+        if ((strlen(tokens[i]))==1)
+        {
+            switch(*tokens[i])
+            {
+                case '+':
+                {
+                    b=pop(&top,stack);
+                    a=pop(&top,stack);
+                    push((a+b),&top,stack);
+                    break;
+                }
+                case '-':
+                {
+                    b=pop(&top,stack);
+                    a=pop(&top,stack);
+                    push((a-b),&top,stack);
+                    break;
+                }
+                case '*':
+                {
+                    b=pop(&top,stack);
+                    a=pop(&top,stack);
+                    push((a*b),&top,stack);
+                    break;
+                }
+                case '/':
+                {
+                    b=pop(&top,stack);
+                    a=pop(&top,stack);
+                    push((a/b),&top,stack);
+                    break;
+                }
+                default:
+                {
+                    push((atoi(tokens[i])),&top,stack);
+                    break;
+                }
+            }
+        }
+        else
+            push((atoi(tokens[i])),&top,stack);
+    }
+    return pop(&top,stack);
+}
