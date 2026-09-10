@@ -1,0 +1,26 @@
+struct ListNode* reverseBetween(struct ListNode* head, int left, int right) {
+    if ((head==NULL)||(head->next==NULL)||(left>=right))
+        return head;
+    int i=1;
+    struct ListNode* temp=head,*curr,*prev,*ptr,*ptrn;
+    while (i<left)
+    {
+        i=i+1;
+        ptrn=temp;
+        temp=temp->next;
+    }
+    ptr=temp;
+    prev=temp;
+    temp=temp->next;
+    while (i<right)
+    {
+        i=i+1;
+        curr=temp;
+        temp=temp->next;
+        curr->next=prev;
+        prev=curr;
+    }
+    ptr->next=temp;
+    (left==1)?(head=curr):(ptrn->next=curr);
+    return head;
+}
